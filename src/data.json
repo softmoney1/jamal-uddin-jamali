@@ -28,7 +28,7 @@
         "reviews": 3
       },
       "coverImage": "https://m.media-amazon.com/images/I/71mTve1yvVL._SY522_.jpg",
-      "featured": true,
+      "featured": false,
       "buyLinks": {
         "amazon": "https://www.amazon.com/dp/B01DEQYM96",
         "goodreads": "https://www.goodreads.com/book/show/29616382-the-sin-of-killing"
@@ -56,7 +56,7 @@
       "format": "Kindle Edition",
       "fileSize": "785 KB",
       "genre": ["Literary Fiction", "Psychological Fiction", "Suspense"],
-      "featured": false,
+      "featured": true,
       "coverImage": "/assets/the-baby.jpeg",
       "buyLinks": {
         "amazon": "https://www.amazon.com/gp/product/B0GWYPZW1Q",

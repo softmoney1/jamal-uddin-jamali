@@ -36,25 +36,29 @@ function Books() {
         }}
       >
         {filteredBooks.map((book) => (
-          <motion.article
+          <Link
             key={book.slug}
-            className="flex flex-col mx-auto w-full max-w-[640px] bg-[#ffffff] border border-[#e8e0d0] rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-[20px] transition hover:border-gold h-full min-h-[26rem]"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
+            to={`/books/${book.slug}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <div className="flex flex-col gap-[24px] lg:flex-row lg:items-center h-full">
-              <div className="flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_6px_20px_rgba(0,0,0,0.18)] aspect-[2/3] w-[180px] self-center my-auto">
-                <img
-                  src={book.coverImage}
-                  alt={book.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="book-info">
-                <div>
-                  <div className="flex flex-wrap gap-[6px]">
+            <motion.article
+              className="flex flex-col mx-auto w-full max-w-[640px] bg-[#ffffff] border border-[#e8e0d0] rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-[20px] transition-all duration-200 ease-[ease] hover:border-gold hover:-translate-y-[2px] hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] cursor-pointer h-full min-h-[26rem]"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <div className="flex flex-col gap-[24px] lg:flex-row lg:items-center h-full">
+                <div className="flex-shrink-0 overflow-hidden rounded-[10px] shadow-[0_6px_20px_rgba(0,0,0,0.18)] aspect-[2/3] w-[180px] self-center my-auto">
+                  <img
+                    src={book.coverImage}
+                    alt={book.title}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="book-info">
+                  <div>
+                    <div className="flex flex-wrap gap-[6px]">
                     {book.genre.map((g) => (
                       <span key={g} className="bg-[#f5f0e8] text-[#6b4c3b] text-[10px] font-semibold tracking-[0.06em] px-[10px] py-[4px] rounded-[20px] uppercase">
                         {g}
@@ -74,6 +78,7 @@ function Books() {
                     href={book.buyLinks?.amazon || '#'}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="book-card-btn bg-[#1a1a2e] text-[#e8c468]"
                   >
                     Amazon
@@ -82,6 +87,7 @@ function Books() {
                     href={book.buyLinks?.goodreads || '#'}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="book-card-btn bg-[#2d6a4f] text-[#b7e4c7]"
                   >
                     Goodreads
@@ -90,6 +96,7 @@ function Books() {
                     href={book.buyLinks?.kindle || '#'}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="book-card-btn bg-[#f5f0e8] text-[#1a1a2e] border border-[#d4c9b0]"
                   >
                     Kindle
@@ -98,6 +105,7 @@ function Books() {
               </div>
             </div>
           </motion.article>
+          </Link>
         ))}
       </motion.div>
     </section>
