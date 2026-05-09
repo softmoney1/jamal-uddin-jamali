@@ -19,6 +19,7 @@ const iconMap = {
   instagram: faInstagram,
   amazon: faAmazon,
   goodreads: faGoodreads,
+  kindle: faAmazon,
 }
 
 function Footer({ social, books }) {
@@ -110,7 +111,7 @@ function Footer({ social, books }) {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-midnight-navy pt-6 text-sm text-cream-alt sm:flex-row">
           <p className="flex items-center gap-2">
             <FontAwesomeIcon icon={faCopyright} className="h-3.5 w-3.5" />
-            Copyright © Jamaluddin Jamali
+            2026 Jamaluddin Jamali. All rights reserved.
           </p>
           <p>Designed with a clean, minimal author portfolio layout.</p>
         </div>

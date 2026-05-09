@@ -1,33 +1,75 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faAmazon, faGoodreads } from '@fortawesome/free-brands-svg-icons'
 import data from '../data.json'
 
+// Map store keys to icons; kindle falls back to Amazon icon
 const storeIcons = {
-  Amazon: faAmazon,
-  Goodreads: faGoodreads,
+  amazon: faAmazon,
+  goodreads: faGoodreads,
+  kindle: faAmazon,
+}
+
+// Always render 3 buttons — fallback href="#" if link missing
+function BuyButtonRow({ buyLinks, size = 'sm' }) {
+  const buttons = [
+    { key: 'amazon', label: 'Amazon', bg: '#1a1a2e', color: '#e8c468', border: 'none' },
+    { key: 'goodreads', label: 'Goodreads', bg: '#2d6a4f', color: '#b7e4c7', border: 'none' },
+    { key: 'kindle', label: 'Kindle', bg: '#f5f0e8', color: '#1a1a2e', border: '1px solid #d4c9b0' },
+  ]
+  const padding = size === 'lg' ? 'px-5 py-3 text-sm' : 'book-card-btn'
+
+  if (size === 'lg') {
+    return (
+      <div className="flex flex-wrap gap-3">
+        {buttons.map(({ key, label, bg, color, border }) => (
+          <a
+            key={key}
+            href={buyLinks?.[key] || '#'}
+            target="_blank"
+            rel="noreferrer"
+            style={{ background: bg, color, border: border !== 'none' ? border : undefined }}
+            className={`inline-flex items-center gap-2 rounded-xl font-semibold transition hover:opacity-80 ${padding}`}
+          >
+            <FontAwesomeIcon icon={storeIcons[key]} className="h-4 w-4" />
+            {label}
+          </a>
+        ))}
+      </div>
+    )
+  }
+
+  return (
+    <div className="book-card-buttons">
+      {buttons.map(({ key, label, bg, color, border }) => (
+        <a
+          key={key}
+          href={buyLinks?.[key] || '#'}
+          target="_blank"
+          rel="noreferrer"
+          style={{ background: bg, color, border: border !== 'none' ? border : undefined }}
+          className="book-card-btn transition hover:opacity-80"
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  )
 }
 
 function BookDetail() {
   const { slug } = useParams()
-  const book = useMemo(
-    () => data.books.find((item) => item.slug === slug),
-    [slug],
-  )
-  const relatedBooks = useMemo(
-    () => data.books.filter((item) => item.slug !== slug),
-    [slug],
-  )
-  const [message, setMessage] = useState('')
+  const book = useMemo(() => data.books.find((item) => item.slug === slug), [slug])
+  const relatedBooks = useMemo(() => data.books.filter((item) => item.slug !== slug), [slug])
 
   if (!book) {
     return (
-      <div className="rounded-3xl border border-slate-200 bg-white p-10 shadow-soft">
+      <div className="rounded-3xl border border-[#e8e0d0] bg-white p-10">
         <p className="text-base text-slate-600">Book not found.</p>
-        <Link to="/books" className="mt-4 inline-flex rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-500">
+        <Link to="/books" className="mt-4 inline-flex rounded-xl bg-[#1a1a2e] px-5 py-3 text-sm font-semibold text-[#e8c468] hover:opacity-80">
           Back to Books
         </Link>
       </div>
@@ -35,119 +77,162 @@ function BookDetail() {
   }
 
   return (
-    <div className="space-y-10">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-        <div>
-          <Link
-            to="/books"
-            className="inline-flex items-center gap-2 text-sm font-medium text-brand-600 hover:text-brand-700"
-          >
-            <FontAwesomeIcon icon={faArrowLeft} />
-            Back to books
-          </Link>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-midnight-navy">
-            {book.title}
-          </h1>
-          <div className="mt-6 space-y-4">
-            {book.tagline && <p className="text-lg leading-8 text-slate-700 italic">{book.tagline}</p>}
-            {book.boldLine && <p className="text-lg leading-8 text-slate-900 font-bold">{book.boldLine}</p>}
-            {book.hook && <p className="text-lg leading-8 text-slate-700">{book.hook}</p>}
-          </div>
-        </div>
-        <div className="rounded-3xl border border-card-border bg-cream-alt p-6 shadow-soft">
-          <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Details</p>
-          <div className="mt-4 space-y-2 text-sm text-slate-600">
-            <p>
-              <span className="font-semibold text-slate-900">Pages:</span> {book.pages}
-            </p>
-            <p>
-              <span className="font-semibold text-slate-900">Format:</span> {book.format}
-            </p>
-            <p>
-              <span className="font-semibold text-slate-900">Published:</span> {book.publishedDate}
-            </p>
-            <p>
-              <span className="font-semibold text-slate-900">File size:</span> {book.fileSize}
-            </p>
-            <p>
-              <span className="font-semibold text-slate-900">Editor:</span> {book.editor}
-            </p>
-          </div>
-        </div>
-      </div>
+    <div className="space-y-12 px-4 py-10 sm:px-6 lg:px-8">
 
-      <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
-        <div className="space-y-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
-          <div>
-            <h2 className="text-2xl font-semibold text-midnight-navy">About the Book</h2>
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.32em] text-brand-600">{book.tagline}</p>
+      {/* ── BACK LINK ── */}
+      <Link
+        to="/books"
+        className="inline-flex items-center gap-2 text-sm font-medium text-[#1a1a2e] hover:text-[#c0392b] transition"
+      >
+        <FontAwesomeIcon icon={faArrowLeft} />
+        Back to Books
+      </Link>
+
+      {/* ── TOP SECTION — 2 columns ── */}
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
+
+        {/* LEFT COL — cover + buy icons */}
+        <div className="flex-shrink-0 space-y-5 lg:w-[200px]">
+          <div className="overflow-hidden rounded-[10px] shadow-[0_6px_20px_rgba(0,0,0,0.18)] aspect-[2/3] w-full">
+            <img src={book.coverImage} alt={book.title} className="h-full w-full object-cover" />
           </div>
-          {book.paragraphs.map((paragraph, index) => (
-            <p key={index} className="text-base leading-8 text-slate-600">
-              {paragraph}
-            </p>
-          ))}
-          <div className="flex flex-wrap gap-3">
-            {Object.entries(book.buyLinks || {}).map(([store, url]) => (
+          {/* Buy icons below cover */}
+          <div className="flex flex-col gap-2">
+            {[
+              { key: 'amazon', label: 'Amazon', icon: faAmazon, bg: '#1a1a2e', color: '#e8c468' },
+              { key: 'goodreads', label: 'Goodreads', icon: faGoodreads, bg: '#2d6a4f', color: '#b7e4c7' },
+              { key: 'kindle', label: 'Kindle', icon: faAmazon, bg: '#f5f0e8', color: '#1a1a2e', border: '1px solid #d4c9b0' },
+            ].map(({ key, label, icon, bg, color, border }) => (
               <a
-                key={store}
-                href={url || '#'}
+                key={key}
+                href={book.buyLinks?.[key] || '#'}
                 target="_blank"
                 rel="noreferrer"
-                className={`inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold transition hover:opacity-80 ${store === 'amazon' ? 'bg-amazon text-gold' : 'bg-goodreads text-white'}`}
+                style={{ background: bg, color, border }}
+                className="flex items-center justify-center gap-2 rounded-lg py-2 text-xs font-semibold transition hover:opacity-80"
               >
-                <FontAwesomeIcon icon={storeIcons[store.charAt(0).toUpperCase() + store.slice(1)] || storeIcons.Amazon} className="h-4 w-4 text-current" />
-                Buy on {store.charAt(0).toUpperCase() + store.slice(1)}
+                <FontAwesomeIcon icon={icon} className="h-3.5 w-3.5" />
+                {label}
               </a>
             ))}
           </div>
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Editorial review</p>
-            <p className="mt-4 text-base leading-7 text-slate-700">
-              “{book.editorialReview.text}”
-            </p>
-            <p className="mt-3 text-sm font-semibold text-slate-900">— {book.editorialReview.reviewer}</p>
-          </div>
-          <div className="space-y-3 rounded-3xl border border-slate-200 bg-white p-6">
-            <div className="flex flex-wrap gap-2">
-              {book.genre.map((genre) => (
-                <span key={genre} className="rounded-xl border border-slate-300 bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
-                  {genre}
-                </span>
-              ))}
-            </div>
-            <p className="text-sm text-slate-600">
-              Rating: {book.rating.amazon} Amazon · {book.rating.goodreads} Goodreads ({book.rating.reviews} ratings)
-            </p>
-          </div>
         </div>
 
-        <motion.aside
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-8"
-        >
-          <div className="mx-auto w-full max-w-sm overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft aspect-[2/3] lg:max-w-none">
-            <img src={book.coverImage} alt={book.title} className="h-full w-full object-cover" />
+        {/* RIGHT COL — content */}
+        <div className="flex-1 space-y-5 min-w-0">
+          {/* Genre badges */}
+          <div className="flex flex-wrap gap-[6px]">
+            {book.genre.map((g) => (
+              <span key={g} className="bg-[#f5f0e8] text-[#6b4c3b] text-[10px] font-semibold tracking-[0.06em] px-[10px] py-[4px] rounded-[20px] uppercase">
+                {g}
+              </span>
+            ))}
           </div>
-          <div className="space-y-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-            <h3 className="text-lg font-semibold text-midnight-navy">Related books</h3>
-            <div className="space-y-4">
-              {relatedBooks.map((item) => (
-                <Link
-                  key={item.slug}
-                  to={`/books/${item.slug}`}
-                  className="block rounded-3xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-700 transition hover:border-brand-300 hover:bg-white"
-                >
-                  <p className="font-semibold text-slate-950">{item.title}</p>
-                  <p className="mt-2 text-sm text-slate-600 line-clamp-2">{item.shortDescription}</p>
-                </Link>
-              ))}
-            </div>
+
+          {/* Title */}
+          <h1 className="text-4xl font-black leading-tight text-[#1a1a2e] tracking-tight">
+            {book.title}
+          </h1>
+
+          {/* Tagline (italic, crimson) */}
+          {book.tagline && (
+            <p className="text-lg leading-7 text-[#c0392b] italic">{book.tagline}</p>
+          )}
+
+          {/* boldLine */}
+          {book.boldLine && (
+            <p className="text-base leading-7 text-[#1a1a2e] font-bold">{book.boldLine}</p>
+          )}
+
+          {/* hook */}
+          {book.hook && (
+            <p className="text-base leading-7 text-[#2c2c2a]">{book.hook}</p>
+          )}
+
+          {/* Paragraphs — full text, no clamp */}
+          <div className="space-y-4 pt-2">
+            {book.paragraphs.map((para, i) => (
+              <p key={i} className="text-base leading-8 text-[#5f5e5a]">{para}</p>
+            ))}
           </div>
-        </motion.aside>
+        </div>
       </div>
+
+      {/* ── GET THE BOOK — full-width button row ── */}
+      <div className="rounded-2xl border border-[#e8e0d0] bg-[#fdfaf5] px-6 py-5 space-y-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.38em] text-[#6b4c3b]">Get the Book</p>
+        <BuyButtonRow buyLinks={book.buyLinks} size="lg" />
+      </div>
+
+      {/* ── EDITORIAL REVIEW BLOCK ── */}
+      {book.editorialReview && (
+        <div className="rounded-2xl border border-[#e8e0d0] bg-white p-7 shadow-[0_4px_20px_rgba(0,0,0,0.06)] space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.38em] text-[#6b4c3b]">Editorial Review</p>
+          <p className="text-base leading-8 text-[#2c2c2a] italic">
+            &ldquo;{book.editorialReview.text}&rdquo;
+          </p>
+          <p className="text-sm font-bold text-[#1a1a2e]">— {book.editorialReview.reviewer}</p>
+        </div>
+      )}
+
+      {/* ── DETAILS ROW — 2 columns ── */}
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Publisher details */}
+        <div className="rounded-2xl border border-[#e8e0d0] bg-[#f5f0e8] p-6 space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.38em] text-[#6b4c3b]">Details</p>
+          <dl className="space-y-2 text-sm text-[#2c2c2a]">
+            {book.pages && <div className="flex gap-2"><dt className="font-semibold min-w-[90px]">Pages</dt><dd>{book.pages}</dd></div>}
+            {book.format && <div className="flex gap-2"><dt className="font-semibold min-w-[90px]">Format</dt><dd>{book.format}</dd></div>}
+            {book.publishedDate && <div className="flex gap-2"><dt className="font-semibold min-w-[90px]">Published</dt><dd>{book.publishedDate}</dd></div>}
+            {book.fileSize && <div className="flex gap-2"><dt className="font-semibold min-w-[90px]">File Size</dt><dd>{book.fileSize}</dd></div>}
+            {book.editor && <div className="flex gap-2"><dt className="font-semibold min-w-[90px]">Editor</dt><dd>{book.editor}</dd></div>}
+            {book.rating?.amazon && (
+              <div className="flex gap-2">
+                <dt className="font-semibold min-w-[90px]">Rating</dt>
+                <dd>{book.rating.amazon} Amazon · {book.rating.goodreads} Goodreads ({book.rating.reviews} reviews)</dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
+        {/* Genre tags */}
+        <div className="rounded-2xl border border-[#e8e0d0] bg-[#f5f0e8] p-6 space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.38em] text-[#6b4c3b]">Genre</p>
+          <div className="flex flex-wrap gap-[8px]">
+            {book.genre.map((g) => (
+              <span key={g} className="bg-[#1a1a2e] text-[#e8c468] text-[11px] font-semibold tracking-[0.06em] px-3 py-1.5 rounded-xl uppercase">
+                {g}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── RELATED BOOKS ── */}
+      {relatedBooks.length > 0 && (
+        <div className="space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.38em] text-[#6b4c3b]">Related Books</p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedBooks.map((item) => (
+              <motion.div
+                key={item.slug}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <Link
+                  to={`/books/${item.slug}`}
+                  className="block rounded-2xl border border-[#e8e0d0] bg-white p-5 transition hover:border-[#e8c468] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
+                >
+                  <p className="font-bold text-[#1a1a2e] text-sm leading-snug">{item.title}</p>
+                  <p className="mt-2 text-xs leading-5 text-[#5f5e5a] line-clamp-2">{item.shortDescription}</p>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
     </div>
   )
 }

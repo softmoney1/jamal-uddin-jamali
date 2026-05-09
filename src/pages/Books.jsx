@@ -13,11 +13,9 @@ function Books() {
 
   return (
     <section className="space-y-8">
-      <div className="rounded-3xl border border-card-border bg-warm-cream p-8 shadow-soft">
-        <h1 className="text-3xl font-semibold text-midnight-navy">Books</h1>
-        <p className="mt-3 text-sm leading-7 text-slate-600">
-          Explore the collection of stories by Jamaluddin Jamali. Use the search field above to filter by title or browse every book here.
-        </p>
+      <div className="rounded-3xl border border-[#e8e0d0] bg-[#fdfaf5] p-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
+        <h1 className="text-3xl font-bold text-[#1a1a2e]">Books by Jamaluddin Jamali</h1>
+        <p className="mt-2 text-sm leading-7 text-[#5f5e5a]">Fiction that goes where others don't dare.</p>
         {searchTerm && (
           <p className="mt-3 rounded-2xl bg-slate-100 px-4 py-3 text-sm text-slate-700">
             Search results for <strong>{searchTerm}</strong>
