@@ -65,9 +65,15 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
         <div className="flex items-center gap-4 text-xs uppercase tracking-[0.32em] text-cream-alt/80">
           <span className="text-cream-alt">Get new book alerts, news & more!</span>
           <span className="inline-flex items-center gap-4 px-3 py-1">
-            <FontAwesomeIcon icon={faTwitter} href='https://x.com/jm_jamali' className="h-4 w-4 hover:text-gold transition cursor-pointer" />
-            <FontAwesomeIcon icon={faInstagram} href='https://www.instagram.com/ourbookreaders/' className="h-4 w-4 hover:text-gold transition cursor-pointer" />
-            <FontAwesomeIcon icon={faFacebookF} href='https://www.facebook.com/ThebookReadersReview/' className="h-4 w-4 hover:text-gold transition cursor-pointer" />
+            <a href='https://x.com/jm_jamali' target="_blank" rel="noreferrer" className="text-cream-alt hover:text-gold transition flex items-center" aria-label="Twitter">
+              <FontAwesomeIcon icon={faTwitter} className="h-4 w-4" />
+            </a>
+            <a href='https://www.instagram.com/ourbookreaders/' target="_blank" rel="noreferrer" className="text-cream-alt hover:text-gold transition flex items-center" aria-label="Instagram">
+              <FontAwesomeIcon icon={faInstagram} className="h-4 w-4" />
+            </a>
+            <a href='https://www.facebook.com/ThebookReadersReview/' target="_blank" rel="noreferrer" className="text-cream-alt hover:text-gold transition flex items-center" aria-label="Facebook">
+              <FontAwesomeIcon icon={faFacebookF} className="h-4 w-4" />
+            </a>
           </span>
         </div>
         <button
