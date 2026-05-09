@@ -65,9 +65,9 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
         <div className="flex items-center gap-4 text-xs uppercase tracking-[0.32em] text-cream-alt/80">
           <span className="text-cream-alt">Get new book alerts, news & more!</span>
           <span className="inline-flex items-center gap-4 px-3 py-1">
-            <FontAwesomeIcon icon={faTwitter} className="h-4 w-4 hover:text-gold transition cursor-pointer" />
-            <FontAwesomeIcon icon={faInstagram} className="h-4 w-4 hover:text-gold transition cursor-pointer" />
-            <FontAwesomeIcon icon={faFacebookF} className="h-4 w-4 hover:text-gold transition cursor-pointer" />
+            <FontAwesomeIcon icon={faTwitter} href='https://x.com/jm_jamali' className="h-4 w-4 hover:text-gold transition cursor-pointer" />
+            <FontAwesomeIcon icon={faInstagram} href='https://www.instagram.com/ourbookreaders/' className="h-4 w-4 hover:text-gold transition cursor-pointer" />
+            <FontAwesomeIcon icon={faFacebookF} href='https://www.facebook.com/ThebookReadersReview/' className="h-4 w-4 hover:text-gold transition cursor-pointer" />
           </span>
         </div>
         <button
@@ -184,8 +184,7 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
             end
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
-              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${
-                isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
+              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
               }`
             }
           >
@@ -228,8 +227,7 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
             to="/about"
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
-              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${
-                isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
+              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
               }`
             }
           >
@@ -241,8 +239,7 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
             to="/contact"
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
-              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${
-                isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
+              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
               }`
             }
           >
