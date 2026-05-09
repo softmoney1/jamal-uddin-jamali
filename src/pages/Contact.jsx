@@ -63,7 +63,7 @@ function Contact() {
           </div>
           <button
             type="submit"
-            className="inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-midnight-navy transition hover:opacity-80"
+            className="inline-flex rounded-2xl bg-gold px-6 py-3 text-sm font-semibold text-midnight-navy transition hover:opacity-80"
           >
             Send Message
           </button>

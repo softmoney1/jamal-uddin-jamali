@@ -27,7 +27,7 @@ function BookDetail() {
     return (
       <div className="rounded-3xl border border-slate-200 bg-white p-10 shadow-soft">
         <p className="text-base text-slate-600">Book not found.</p>
-        <Link to="/books" className="mt-4 inline-flex rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-500">
+        <Link to="/books" className="mt-4 inline-flex rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-500">
           Back to Books
         </Link>
       </div>
@@ -90,7 +90,7 @@ function BookDetail() {
                 href={link.url}
                 target="_blank"
                 rel="noreferrer"
-                className={`inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white transition hover:opacity-80 ${link.store === 'Amazon' ? 'bg-amazon' : 'bg-goodreads'}`}
+                className={`inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold transition hover:opacity-80 ${link.store === 'Amazon' ? 'bg-amazon text-gold' : 'bg-goodreads text-white'}`}
               >
                 <FontAwesomeIcon icon={storeIcons[link.store]} className="h-4 w-4 text-current" />
                 Buy on {link.store}
@@ -107,7 +107,7 @@ function BookDetail() {
           <div className="space-y-3 rounded-3xl border border-slate-200 bg-white p-6">
             <div className="flex flex-wrap gap-2">
               {book.genre.map((genre) => (
-                <span key={genre} className="rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                <span key={genre} className="rounded-xl border border-slate-300 bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
                   {genre}
                 </span>
               ))}
@@ -124,7 +124,7 @@ function BookDetail() {
           transition={{ duration: 0.5 }}
           className="space-y-8"
         >
-          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft">
+          <div className="mx-auto w-full max-w-sm overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft aspect-[2/3] lg:max-w-none">
             <img src={book.coverImage} alt={book.title} className="h-full w-full object-cover" />
           </div>
           <div className="space-y-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">

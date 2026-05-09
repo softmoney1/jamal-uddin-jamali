@@ -40,45 +40,55 @@ function Books() {
         {filteredBooks.map((book) => (
           <motion.article
             key={book.slug}
-            className="overflow-hidden rounded-[2rem] border border-card-border bg-cream-alt p-6 shadow-soft transition hover:border-gold"
+            className="overflow-hidden rounded-[2rem] border border-card-border bg-cream-alt p-6 shadow-soft transition hover:border-gold h-full min-h-[26rem]"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="grid gap-6 lg:grid-cols-[120px_1fr] lg:items-start">
-              <img
-                src={book.coverImage}
-                alt={book.title}
-                className="h-[180px] w-full rounded-3xl object-cover lg:h-[220px]"
-              />
-              <div className="space-y-4">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-start h-full">
+              <div className="flex-shrink-0 overflow-hidden rounded-3xl aspect-[2/3] w-[180px] lg:w-[200px]">
+                <img
+                  src={book.coverImage}
+                  alt={book.title}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="book-info space-y-4">
                 <div>
-                  <p className="inline-block rounded-full bg-genre-bg px-3 py-1 text-xs uppercase tracking-[0.3em] text-genre-text">{book.genre.join(' · ')}</p>
+                  <p className="inline-block rounded-xl bg-genre-bg px-3 py-1 text-xs uppercase tracking-[0.3em] text-genre-text">{book.genre.join(' · ')}</p>
                   <h2 className="mt-3 text-2xl font-semibold text-midnight-navy">
                     {book.title}
                   </h2>
                 </div>
-                <p className="text-sm leading-7 text-slate-600">{book.shortDescription}</p>
-                <div className="flex flex-wrap gap-3">
-                  {book.buyLinks.map((link) => (
-                    <a
-                      key={link.store}
-                      href={link.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white transition hover:opacity-80 ${link.store === 'Amazon' ? 'bg-amazon' : 'bg-goodreads'}`}
-                    >
-                      <FontAwesomeIcon icon={iconMap[link.store]} className="h-4 w-4 text-current" />
-                      {link.store}
-                    </a>
-                  ))}
-                  <Link
-                    to={`/books/${book.slug}`}
-                    className="inline-flex items-center justify-center rounded-full border border-midnight-navy bg-transparent text-midnight-navy px-4 py-2 text-sm font-semibold transition hover:bg-midnight-navy hover:text-white"
+                <div className="space-y-4">
+                  <p className="text-sm leading-7 text-slate-600">{book.shortDescription}</p>
+                </div>
+                <div className="book-card-buttons">
+                  <a
+                    href={book.buyLinks?.amazon || '#'}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="book-card-btn bg-midnight-navy text-gold hover:opacity-80 transition"
                   >
-                    Details
-                  </Link>
+                    Amazon
+                  </a>
+                  <a
+                    href={book.buyLinks?.goodreads || '#'}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="book-card-btn bg-goodreads text-[#b7e4c7] hover:opacity-80 transition"
+                  >
+                    Goodreads
+                  </a>
+                  <a
+                    href={book.buyLinks?.kindle || '#'}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="book-card-btn bg-cream-alt text-midnight-navy border border-card-border hover:opacity-80 transition"
+                  >
+                    Kindle
+                  </a>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 {
   "author": {
     "name": "Jamaluddin Jamali",
-    "bio": "Writes crossover book club fiction, suspense, literary thrillers. Stories explore the darkest chambers of human heart and mind — love, fear, hope, depression, light and darkness. Lives in Lahore with wife and four children. Reporter at City News Network, City42, and 24News. Previously at The Nation, The Post, and Pakistan Today. Master's in English Literature. Loves nature and animals.",
+    "bio": "Jamaluddin Jamali writes crossover book club fiction, suspense, literary thrillers, and his stories take you inside the darkest chambers of human heart and mind, deep into the house of desires and fears, the parts of human nature which are universal, such as love and fear, bliss and sorrow, happiness and grief, hope and depression, light and darkness. His stories may take you into dark rabbit holes miles away from hope, but then bring you back to new beginning and hope, for hope is always there, even when it doesn't seem to be there, like a new morning or a new day that is always there, waiting behind some invisible corner, waiting for the right moment to come and fill your heart with hope again. Like a new partner who asks you to forget the past and take a new start and smile again, and then again. Keep smiling. For that is life. A smile just. At the end of the day. A smile that you want to remember. The Sin of Killing: The Dance of Changing Winds is his debut novel. The Baby Who Brought The Storm is his second book. He is working on his new book, a psychological fiction with a female protagonist. He lives in Lahore with his wife and four children and works as a reporter for a media house, City News Network, City42 news and 24 news. Previously, he has worked for three English newspapers: The Nation, The Post and Pakistan Today. He has a master's degree in English Literature and loves being close to nature. He loves animals, all of them, being manifestations of nature.",
     "role": "Author & Reporter",
     "location": "Lahore, Pakistan"
   },
@@ -29,18 +29,10 @@
       },
       "coverImage": "https://m.media-amazon.com/images/I/71mTve1yvVL._SY522_.jpg",
       "featured": true,
-      "buyLinks": [
-        {
-          "store": "Amazon",
-          "url": "https://www.amazon.com/dp/B01DEQYM96",
-          "icon": "amazon"
-        },
-        {
-          "store": "Goodreads",
-          "url": "https://www.goodreads.com/book/show/29616382-the-sin-of-killing",
-          "icon": "goodreads"
-        }
-      ],
+      "buyLinks": {
+        "amazon": "https://www.amazon.com/dp/B01DEQYM96",
+        "goodreads": "https://www.goodreads.com/book/show/29616382-the-sin-of-killing"
+      },
       "editorialReview": {
         "text": "The setting is Pakistan and the book is rich in that country's culture... a great read with a twist in the tail.",
         "reviewer": "E.D. Bird, Editor"
@@ -69,13 +61,9 @@
       },
       "coverImage": "https://m.media-amazon.com/images/I/81BRg0LnTfL._SL1500_.jpg",
       "featured": false,
-      "buyLinks": [
-        {
-          "store": "Amazon",
-          "url": "https://www.amazon.com/gp/product/B0GWYPZW1Q",
-          "icon": "amazon"
-        }
-      ],
+      "buyLinks": {
+        "amazon": "https://www.amazon.com/gp/product/B0GWYPZW1Q"
+      },
       "editorialReview": {
         "text": "A tense, emotional story that balances social realism with deep psychological insight. This novel is a tribute to those whose lives are shaped by love and loss.",
         "reviewer": "Nora Khan, Editor"
