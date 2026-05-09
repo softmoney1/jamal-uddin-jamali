@@ -27,7 +27,7 @@ function Footer({ social, books }) {
 
   const buyLinks = useMemo(() => {
     const featured = books.find((book) => book.featured)
-    return featured?.buyLinks ?? []
+    return featured?.buyLinks ?? {}
   }, [books])
 
   const handleSubmit = (event) => {
@@ -90,16 +90,16 @@ function Footer({ social, books }) {
             <div className="rounded-3xl border border-midnight-navy bg-midnight-navy p-6">
               <h3 className="text-sm font-semibold uppercase text-where-to-buy">Where to Buy</h3>
               <div className="mt-4 space-y-3">
-                {buyLinks.map((link) => (
+                {Object.entries(buyLinks).map(([store, url]) => (
                   <a
-                    key={link.store}
-                    href={link.url}
+                    key={store}
+                    href={url || '#'}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-3 rounded-2xl border border-card-border bg-transparent px-4 py-3 text-sm font-medium text-cream-alt transition hover:border-gold hover:text-gold"
                   >
-                    <FontAwesomeIcon icon={iconMap[link.icon]} className="h-4 w-4" />
-                    {link.store}
+                    <FontAwesomeIcon icon={iconMap[store]} className="h-4 w-4" />
+                    {store.charAt(0).toUpperCase() + store.slice(1)}
                   </a>
                 ))}
               </div>

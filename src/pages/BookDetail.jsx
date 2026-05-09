@@ -84,16 +84,16 @@ function BookDetail() {
             </p>
           ))}
           <div className="flex flex-wrap gap-3">
-            {book.buyLinks.map((link) => (
+            {Object.entries(book.buyLinks || {}).map(([store, url]) => (
               <a
-                key={link.store}
-                href={link.url}
+                key={store}
+                href={url || '#'}
                 target="_blank"
                 rel="noreferrer"
-                className={`inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold transition hover:opacity-80 ${link.store === 'Amazon' ? 'bg-amazon text-gold' : 'bg-goodreads text-white'}`}
+                className={`inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold transition hover:opacity-80 ${store === 'amazon' ? 'bg-amazon text-gold' : 'bg-goodreads text-white'}`}
               >
-                <FontAwesomeIcon icon={storeIcons[link.store]} className="h-4 w-4 text-current" />
-                Buy on {link.store}
+                <FontAwesomeIcon icon={storeIcons[store.charAt(0).toUpperCase() + store.slice(1)] || storeIcons.Amazon} className="h-4 w-4 text-current" />
+                Buy on {store.charAt(0).toUpperCase() + store.slice(1)}
               </a>
             ))}
           </div>
