@@ -6,17 +6,11 @@ import {
   faCopyright,
 } from '@fortawesome/free-solid-svg-icons'
 import {
-  faTwitter,
-  faLinkedin,
-  faInstagram,
   faAmazon,
   faGoodreads,
 } from '@fortawesome/free-brands-svg-icons'
 
 const iconMap = {
-  twitter: faTwitter,
-  linkedin: faLinkedin,
-  instagram: faInstagram,
   amazon: faAmazon,
   goodreads: faGoodreads,
   kindle: faAmazon,
@@ -73,17 +67,19 @@ function Footer({ social, books }) {
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="rounded-3xl border border-midnight-navy bg-midnight-navy p-6">
               <h3 className="text-sm font-semibold uppercase text-where-to-buy">Follow</h3>
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap gap-4">
                 {social.map((item) => (
                   <a
                     key={item.platform}
                     href={item.url}
-                    target="_blank"
+                    target={item.url.startsWith('mailto:') ? '_self' : '_blank'}
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-2xl border border-card-border bg-transparent px-4 py-3 text-sm text-cream-alt transition hover:border-gold hover:text-gold"
+                    aria-label={item.platform}
+                    title={item.platform}
+                    className="text-cream-alt transition-colors duration-200 hover:text-[#e8c468]"
+                    style={{ fontSize: '20px' }}
                   >
-                    <FontAwesomeIcon icon={iconMap[item.icon]} />
-                    {item.platform}
+                    <i className={item.icon}></i>
                   </a>
                 ))}
               </div>
