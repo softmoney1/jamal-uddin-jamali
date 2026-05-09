@@ -92,7 +92,7 @@ function Home() {
             </h2>
             <div className="mx-auto h-px w-[60px] bg-[#e8c468]" />
             <p className="text-base leading-7 text-slate-300 italic">
-              A new novel by {upcoming.author} is on its way.
+              A new novel by {upcoming.author}
             </p>
             <a
               href="#newsletter-email"

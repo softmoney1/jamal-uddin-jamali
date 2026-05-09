@@ -20,7 +20,11 @@
       "publishedDate": "March 25, 2016",
       "format": "Kindle Edition",
       "fileSize": "593 KB",
-      "genre": ["Literary Fiction", "Suspense", "Thriller"],
+      "genre": [
+        "Literary Fiction",
+        "Suspense",
+        "Thriller"
+      ],
       "editor": "E.D. Bird",
       "rating": {
         "amazon": 4.0,
@@ -55,7 +59,11 @@
       "publishedDate": "May 10, 2026",
       "format": "Kindle Edition",
       "fileSize": "785 KB",
-      "genre": ["Literary Fiction", "Psychological Fiction", "Suspense"],
+      "genre": [
+        "Literary Fiction",
+        "Psychological Fiction",
+        "Suspense"
+      ],
       "featured": true,
       "coverImage": "/assets/the-baby.jpeg",
       "buyLinks": {
@@ -98,13 +106,12 @@
     }
   ],
   "upcoming": {
-    "title": "The Dark Side of Cameron",
+    "title": "The Dark Side of Smiling Gamblers",
     "author": "Jamaluddin Jamali",
     "label": "Coming Soon"
   },
   "contact": {
-    "email": "contact@jamaluddinjamali.com",
-    "phone": "+92 300 1234567",
+    "email": "jm.jamali123@gmail.com",
     "address": "Lahore, Pakistan"
   }
 }
