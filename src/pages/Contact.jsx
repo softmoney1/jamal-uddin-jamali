@@ -23,10 +23,10 @@ function Contact() {
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr]">
-      <section className="space-y-6 rounded-[2rem] border border-slate-200 bg-white p-10 shadow-soft">
+      <section className="space-y-6 rounded-[2rem] border border-card-border bg-cream-alt p-10 shadow-soft">
         <div>
           <p className="text-sm uppercase tracking-[0.35em] text-brand-600">Contact</p>
-          <h1 className="mt-4 text-4xl font-semibold text-slate-950">Get in touch</h1>
+          <h1 className="mt-4 text-4xl font-semibold text-midnight-navy">Get in touch</h1>
           <p className="mt-4 text-sm leading-7 text-slate-600">
             Send a note about speaking, book events, or media inquiries. No backend is required — this form shows the expected contact flow.
           </p>
@@ -63,7 +63,7 @@ function Contact() {
           </div>
           <button
             type="submit"
-            className="inline-flex rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-500"
+            className="inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-midnight-navy transition hover:opacity-80"
           >
             Send Message
           </button>
@@ -71,10 +71,10 @@ function Contact() {
         </form>
       </section>
 
-      <aside className="rounded-[2rem] border border-slate-200 bg-slate-50 p-10 shadow-soft">
+      <aside className="rounded-[2rem] border border-card-border bg-warm-cream p-10 shadow-soft">
         <div className="space-y-4">
           <p className="text-sm uppercase tracking-[0.35em] text-brand-600">Details</p>
-          <p className="text-lg font-semibold text-slate-950">Contact information</p>
+          <p className="text-lg font-semibold text-midnight-navy">Contact information</p>
           <div className="space-y-4 text-sm leading-7 text-slate-700">
             <p>
               <strong>Email:</strong> {contact.email}

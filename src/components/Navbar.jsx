@@ -36,8 +36,8 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
 
   const activeClass = ({ isActive }) =>
     isActive
-      ? 'inline-flex items-center rounded-2xl bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-950 transition'
-      : 'inline-flex items-center rounded-2xl px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-950'
+      ? 'inline-flex items-center px-4 py-2 text-sm font-semibold text-gold underline decoration-gold decoration-2 underline-offset-8 transition'
+      : 'inline-flex items-center px-4 py-2 text-sm font-semibold text-cream-alt transition hover:text-gold'
 
   const onSearchChange = (value) => {
     setSearchTerm(value)
@@ -49,7 +49,7 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
         <li key={book.slug}>
           <Link
             to={`/books/${book.slug}`}
-            className="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
+            className="block rounded-lg px-3 py-2 text-sm text-cream-alt transition hover:bg-midnight-navy hover:text-gold"
             onClick={() => setMenuOpen(false)}
           >
             {book.title}
@@ -60,25 +60,25 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
   )
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
-      <div className="hidden items-center justify-between border-b border-slate-200 bg-slate-950 px-4 py-3 text-slate-100 sm:flex sm:px-6 lg:px-8">
-        <div className="flex items-center gap-4 text-xs uppercase tracking-[0.32em] text-slate-300">
-          <span className="text-slate-100">Get new book alerts, news & more!</span>
-          <span className="inline-flex items-center gap-4 px-3 py-1 text-slate-300">
-            <FontAwesomeIcon icon={faTwitter} className="h-4 w-4" />
-            <FontAwesomeIcon icon={faInstagram} className="h-4 w-4" />
-            <FontAwesomeIcon icon={faFacebookF} className="h-4 w-4" />
+    <header className="sticky top-0 z-40 border-b border-midnight-navy bg-midnight-navy backdrop-blur-xl">
+      <div className="hidden items-center justify-between bg-steel-blue px-4 py-3 text-cream-alt sm:flex sm:px-6 lg:px-8">
+        <div className="flex items-center gap-4 text-xs uppercase tracking-[0.32em] text-cream-alt/80">
+          <span className="text-cream-alt">Get new book alerts, news & more!</span>
+          <span className="inline-flex items-center gap-4 px-3 py-1">
+            <FontAwesomeIcon icon={faTwitter} className="h-4 w-4 hover:text-gold transition cursor-pointer" />
+            <FontAwesomeIcon icon={faInstagram} className="h-4 w-4 hover:text-gold transition cursor-pointer" />
+            <FontAwesomeIcon icon={faFacebookF} className="h-4 w-4 hover:text-gold transition cursor-pointer" />
           </span>
         </div>
         <button
           type="button"
-          className="rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-brand-500"
+          className="rounded-full bg-gold px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-midnight-navy transition hover:opacity-80"
         >
           Join My Newsletter
         </button>
       </div>
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="text-lg font-semibold tracking-tight text-slate-950">
+        <Link to="/" className="text-lg font-semibold tracking-tight text-cream-alt hover:text-gold transition">
           {authorName}
         </Link>
 
@@ -90,7 +90,7 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
             <button
               type="button"
               onClick={() => navigate('/books')}
-              className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-cream-alt transition hover:text-gold"
             >
               Books
               <span onClick={(e) => { e.stopPropagation(); setDropdownOpen(!dropdownOpen); }} className="cursor-pointer">
@@ -98,9 +98,9 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
               </span>
             </button>
             {dropdownOpen && (
-              <div className="absolute left-0 top-full z-20 mt-3 min-w-[20rem] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-xl">
-                <div className="border-b border-slate-200 px-5 py-4">
-                  <span className="text-xs uppercase tracking-[0.35em] text-slate-500">All Books</span>
+              <div className="absolute left-0 top-full z-20 mt-3 min-w-[20rem] overflow-hidden rounded-[1.5rem] border border-midnight-navy bg-steel-blue shadow-xl">
+                <div className="border-b border-midnight-navy px-5 py-4">
+                  <span className="text-xs uppercase tracking-[0.35em] text-where-to-buy">All Books</span>
                 </div>
                 <ul className="space-y-1 p-3">
                   {bookItems}
@@ -127,14 +127,14 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
                 setSearchTerm('')
               }
             }}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-950"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-cream-alt transition hover:text-gold"
           >
             <FontAwesomeIcon icon={searchOpen ? faTimes : faSearch} />
           </button>
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-950 md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-cream-alt transition hover:text-gold md:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label="Toggle menu"
           >
@@ -144,7 +144,7 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
       </div>
 
       {searchOpen && (
-        <div className="border-t border-slate-200 bg-slate-50/95 px-4 py-4 sm:px-6 lg:px-8">
+        <div className="border-t border-midnight-navy bg-steel-blue px-4 py-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <label className="sr-only" htmlFor="book-search">
               Search books by title
@@ -160,25 +160,25 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
                 }
               }}
               placeholder="Search titles like The Sin of Killing"
-              className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100"
+              className="w-full rounded-2xl border border-midnight-navy bg-midnight-navy px-4 py-3 text-sm text-cream-alt placeholder-cream-alt/50 shadow-sm outline-none transition focus:border-gold focus:ring-4 focus:ring-gold/20"
             />
           </div>
         </div>
       )}
 
       {menuOpen && (
-        <div className="border-t border-slate-200 bg-white px-4 py-4 sm:px-6 lg:px-8 md:hidden">
+        <div className="border-t border-midnight-navy bg-steel-blue px-4 py-4 sm:px-6 lg:px-8 md:hidden">
           <div className="space-y-3">
             <NavLink to="/" className={activeClass} onClick={() => setMenuOpen(false)} end>
               Home
             </NavLink>
             <button
               type="button"
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-950"
+              className="flex items-center gap-2 text-sm font-medium text-cream-alt hover:text-gold"
               onClick={() => setDropdownOpen((open) => !open)}
             >
               Books
-              <FontAwesomeIcon icon={faChevronDown} className="h-3.5 w-3.5" />
+              <FontAwesomeIcon icon={faChevronDown} className="h-3.5 w-3.5 ml-2" />
             </button>
             {dropdownOpen && <ul className="space-y-1 pl-4">{bookItems}</ul>}
             <NavLink to="/about" className={activeClass} onClick={() => setMenuOpen(false)}>

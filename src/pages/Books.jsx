@@ -13,8 +13,8 @@ function Books() {
 
   return (
     <section className="space-y-8">
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
-        <h1 className="text-3xl font-semibold text-slate-950">Books</h1>
+      <div className="rounded-3xl border border-card-border bg-warm-cream p-8 shadow-soft">
+        <h1 className="text-3xl font-semibold text-midnight-navy">Books</h1>
         <p className="mt-3 text-sm leading-7 text-slate-600">
           Explore the collection of stories by Jamaluddin Jamali. Use the search field above to filter by title or browse every book here.
         </p>
@@ -40,7 +40,7 @@ function Books() {
         {filteredBooks.map((book) => (
           <motion.article
             key={book.slug}
-            className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft"
+            className="overflow-hidden rounded-[2rem] border border-card-border bg-cream-alt p-6 shadow-soft transition hover:border-gold"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
@@ -54,8 +54,8 @@ function Books() {
               />
               <div className="space-y-4">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.3em] text-brand-600">{book.genre.join(' · ')}</p>
-                  <h2 className="mt-3 text-2xl font-semibold text-slate-950">
+                  <p className="inline-block rounded-full bg-genre-bg px-3 py-1 text-xs uppercase tracking-[0.3em] text-genre-text">{book.genre.join(' · ')}</p>
+                  <h2 className="mt-3 text-2xl font-semibold text-midnight-navy">
                     {book.title}
                   </h2>
                 </div>
@@ -67,7 +67,7 @@ function Books() {
                       href={link.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+                      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white transition hover:opacity-80 ${link.store === 'Amazon' ? 'bg-amazon' : 'bg-goodreads'}`}
                     >
                       <FontAwesomeIcon icon={iconMap[link.store]} className="h-4 w-4 text-current" />
                       {link.store}
@@ -75,7 +75,7 @@ function Books() {
                   ))}
                   <Link
                     to={`/books/${book.slug}`}
-                    className="inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-500"
+                    className="inline-flex items-center justify-center rounded-full border border-midnight-navy bg-transparent text-midnight-navy px-4 py-2 text-sm font-semibold transition hover:bg-midnight-navy hover:text-white"
                   >
                     Details
                   </Link>

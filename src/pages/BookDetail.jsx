@@ -45,12 +45,12 @@ function BookDetail() {
             <FontAwesomeIcon icon={faArrowLeft} />
             Back to books
           </Link>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950">
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-midnight-navy">
             {book.title}
           </h1>
           <p className="mt-3 text-lg leading-8 text-slate-700">{book.tagline}</p>
         </div>
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+        <div className="rounded-3xl border border-card-border bg-cream-alt p-6 shadow-soft">
           <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Details</p>
           <div className="mt-4 space-y-2 text-sm text-slate-600">
             <p>
@@ -75,7 +75,7 @@ function BookDetail() {
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
         <div className="space-y-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-950">About the Book</h2>
+            <h2 className="text-2xl font-semibold text-midnight-navy">About the Book</h2>
             <p className="mt-4 text-sm font-semibold uppercase tracking-[0.32em] text-brand-600">{book.tagline}</p>
           </div>
           {book.paragraphs.map((paragraph, index) => (
@@ -90,7 +90,7 @@ function BookDetail() {
                 href={link.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-500"
+                className={`inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white transition hover:opacity-80 ${link.store === 'Amazon' ? 'bg-amazon' : 'bg-goodreads'}`}
               >
                 <FontAwesomeIcon icon={storeIcons[link.store]} className="h-4 w-4 text-current" />
                 Buy on {link.store}
@@ -128,7 +128,7 @@ function BookDetail() {
             <img src={book.coverImage} alt={book.title} className="h-full w-full object-cover" />
           </div>
           <div className="space-y-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-            <h3 className="text-lg font-semibold text-slate-950">Related books</h3>
+            <h3 className="text-lg font-semibold text-midnight-navy">Related books</h3>
             <div className="space-y-4">
               {relatedBooks.map((item) => (
                 <Link

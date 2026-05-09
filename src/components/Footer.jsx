@@ -39,10 +39,10 @@ function Footer({ social, books }) {
   }
 
   return (
-    <footer className="border-t border-slate-200 bg-white px-4 py-10 sm:px-6 lg:px-8">
+    <footer className="border-t border-midnight-navy bg-steel-blue text-cream-alt px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-10">
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] xl:grid-cols-[1.6fr_1fr]">
-          <div className="rounded-3xl bg-slate-950 px-8 py-10 text-white shadow-soft sm:px-10">
+          <div className="rounded-3xl bg-midnight-navy px-8 py-10 text-cream-alt shadow-soft sm:px-10">
             <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Newsletter</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight">Join My Newsletter</h2>
             <p className="mt-4 text-sm leading-7 text-slate-300">
@@ -62,7 +62,7 @@ function Footer({ social, books }) {
               />
               <button
                 type="submit"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-500"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-2xl bg-gold px-5 py-3 text-sm font-semibold text-midnight-navy transition hover:opacity-80"
               >
                 Join My Newsletter
               </button>
@@ -70,8 +70,8 @@ function Footer({ social, books }) {
             {status && <p className="mt-3 text-sm text-emerald-300">{status}</p>}
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <h3 className="text-sm font-semibold uppercase text-slate-500">Follow</h3>
+            <div className="rounded-3xl border border-midnight-navy bg-midnight-navy p-6">
+              <h3 className="text-sm font-semibold uppercase text-where-to-buy">Follow</h3>
               <div className="mt-4 flex flex-wrap gap-3">
                 {social.map((item) => (
                   <a
@@ -79,7 +79,7 @@ function Footer({ social, books }) {
                     href={item.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 transition hover:border-slate-300 hover:bg-slate-100"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-card-border bg-transparent px-4 py-3 text-sm text-cream-alt transition hover:border-gold hover:text-gold"
                   >
                     <FontAwesomeIcon icon={iconMap[item.icon]} />
                     {item.platform}
@@ -87,8 +87,8 @@ function Footer({ social, books }) {
                 ))}
               </div>
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <h3 className="text-sm font-semibold uppercase text-slate-500">Where to Buy</h3>
+            <div className="rounded-3xl border border-midnight-navy bg-midnight-navy p-6">
+              <h3 className="text-sm font-semibold uppercase text-where-to-buy">Where to Buy</h3>
               <div className="mt-4 space-y-3">
                 {buyLinks.map((link) => (
                   <a
@@ -96,7 +96,7 @@ function Footer({ social, books }) {
                     href={link.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800 transition hover:border-slate-300 hover:bg-slate-100"
+                    className="flex items-center gap-3 rounded-2xl border border-card-border bg-transparent px-4 py-3 text-sm font-medium text-cream-alt transition hover:border-gold hover:text-gold"
                   >
                     <FontAwesomeIcon icon={iconMap[link.icon]} className="h-4 w-4" />
                     {link.store}
@@ -107,7 +107,7 @@ function Footer({ social, books }) {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-midnight-navy pt-6 text-sm text-cream-alt sm:flex-row">
           <p className="flex items-center gap-2">
             <FontAwesomeIcon icon={faCopyright} className="h-3.5 w-3.5" />
             Copyright © Jamaluddin Jamali

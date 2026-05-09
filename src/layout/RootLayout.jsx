@@ -19,7 +19,7 @@ function RootLayout() {
   }, [searchTerm])
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-950">
+    <div className="min-h-screen bg-warm-cream text-body-text">
       <Navbar
         authorName={data.author.name}
         books={data.books}
@@ -29,9 +29,9 @@ function RootLayout() {
       <AnimatePresence mode="wait" initial={false}>
         <motion.main
           key={location.pathname}
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -24 }}
+          exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.35, ease: 'easeOut' }}
           className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8"
         >

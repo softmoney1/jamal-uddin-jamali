@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <section className="space-y-12 px-4 py-10 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl rounded-[2rem] bg-white p-8 shadow-soft sm:p-10">
+      <div className="mx-auto max-w-7xl rounded-[2rem] bg-warm-cream p-8 shadow-soft sm:p-10">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -20,13 +20,13 @@ function Home() {
               <span className="font-semibold text-slate-900">OUT NOW!!!</span>
               <span className="inline-block h-px w-24 bg-slate-200 align-middle"></span>
             </div>
-            <h1 className="text-5xl font-black leading-tight tracking-[-0.04em] text-slate-950 sm:text-6xl">
+            <h1 className="text-5xl font-black leading-tight tracking-[-0.04em] text-deep-crimson sm:text-6xl">
               The Sin of Killing
             </h1>
-            <p className="text-base font-semibold uppercase tracking-[0.32em] text-red-600">
+            <p className="text-base font-bold uppercase tracking-[0.32em] text-midnight-navy">
               {featured.tagline}
             </p>
-            <div className="space-y-5 text-slate-600">
+            <div className="space-y-5 text-body-text">
               <p className="max-w-2xl text-base leading-8">{featured.shortDescription}</p>
               <p className="max-w-2xl text-sm leading-7">
                 The Sin of Killing follows Salma from a fifth birthday in Lahore to a restless search for truth across generations. When nephew Ahsen arrives, family sins open into a dark, tender story of lost love, danger, and the possibility of redemption in a world shaped by memory and quiet violence.
@@ -37,13 +37,13 @@ function Home() {
                 href={featured.buyLinks[0].url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white! transition hover:bg-slate-800"
+                className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-semibold text-midnight-navy transition hover:opacity-80"
               >
                 Buy Today
               </a>
               <Link
                 to={`/books/${featured.slug}`}
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-slate-400"
+                className="inline-flex items-center justify-center rounded-full border border-midnight-navy bg-transparent px-6 py-3 text-sm font-semibold text-midnight-navy transition hover:bg-midnight-navy hover:text-white"
               >
                 More Info
               </Link>
@@ -68,15 +68,15 @@ function Home() {
 
       <div className="mx-auto max-w-7xl grid gap-6 lg:grid-cols-2">
         {secondaryBooks.map((book, index) => (
-          <article key={book.slug} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-soft">
+          <article key={book.slug} className="rounded-[2rem] border border-card-border bg-cream-alt p-7 shadow-soft transition hover:border-gold">
             <div className="mb-6 flex items-center justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-slate-500">
                   {index === 0 ? 'COMING SOON!' : 'OUT NOW'}
                 </p>
-                <h2 className="mt-3 text-2xl font-semibold text-slate-950">{book.title}</h2>
+                <h2 className="mt-3 text-2xl font-semibold text-midnight-navy">{book.title}</h2>
               </div>
-              <span className="rounded-full px-3 py-1 text-xs uppercase tracking-[0.32em] text-slate-600">
+              <span className="rounded-full bg-genre-bg text-genre-text px-3 py-1 text-xs uppercase tracking-[0.32em]">
                 {book.genre[0]}
               </span>
             </div>
