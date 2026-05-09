@@ -8,7 +8,7 @@ import Contact from './pages/Contact'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/jamal-uddin-jamali">
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
