@@ -39,34 +39,29 @@
       }
     },
     {
-      "id": "baby-storm",
+      "id": 2,
       "title": "The Baby Who Brought the Storm",
       "slug": "the-baby-who-brought-the-storm",
-      "tagline": "A Tear For Unmarried Mothers. A tribute.",
-      "shortDescription": "A literary crossover of psychological realism. A tale of bliss and sorrow, forbidden love, loyalty, betrayal and social taboos.",
+      "tagline": "A Tear for Unmarried Mothers. A tribute.",
+      "boldLine": "Maira needs a baby...",
+      "hook": "Maira was his enemy, a beautiful one. She was one of those for whom he could cry, and he did.",
+      "shortDescription": "A literary crossover of psychological realism — a tale of forbidden love, loyalty, betrayal, and social taboos set in Pakistan.",
       "paragraphs": [
-        "Aadam is abandoned at birth and raised by a wealthy Muslim family whose fortunes and faults carry him into the shadow of a forbidden love. When he meets an unmarried pregnant girl, his loyalty is tested and his family’s fragile peace begins to crumble.",
-        "He must choose whether to save his love or surrender to the social taboos and betrayals that threaten to destroy everything he has ever held dear."
+        "He is a Muslim, but adores a Christian family as his own. Abandoned at birth near the gate of a public park, found and rescued by a Christian morning walker, he is now the Managing Director of Hayat Group of Companies. A wealthy Muslim family has raised him. He has so many mothers now, an abundance of everything.",
+        "Aadam is grateful to his biological mother for giving him life. He is taking a new start with Mooba, the girl he has loved since school days. Meanwhile, he meets a sad and beautiful unmarried pregnant girl and, moved by her helplessness, decides to do something for her. It becomes his biggest mistake.",
+        "It ruins the family that raised him. He wants to save as much as he can — important things first, such as his love. It is a tale of bliss and sorrow, oscillating joy, grief, depression, forbidden love, loyalty, betrayal and social taboos. Smiling when he should cry, Aadam is trying to save his dream world."
       ],
       "pages": 288,
       "publishedDate": "May 10, 2026",
       "format": "Kindle Edition",
       "fileSize": "785 KB",
       "genre": ["Literary Fiction", "Psychological Fiction", "Suspense"],
-      "editor": "Nora Khan",
-      "rating": {
-        "amazon": 4.2,
-        "goodreads": 4.5,
-        "reviews": 12
-      },
-      "coverImage": "https://m.media-amazon.com/images/I/81BRg0LnTfL._SL1500_.jpg",
       "featured": false,
+      "coverImage": "/assets/the-baby.jpeg",
       "buyLinks": {
-        "amazon": "https://www.amazon.com/gp/product/B0GWYPZW1Q"
-      },
-      "editorialReview": {
-        "text": "A tense, emotional story that balances social realism with deep psychological insight. This novel is a tribute to those whose lives are shaped by love and loss.",
-        "reviewer": "Nora Khan, Editor"
+        "amazon": "https://www.amazon.com/gp/product/B0GWYPZW1Q",
+        "goodreads": "#",
+        "kindle": "#"
       }
     }
   ],
@@ -87,6 +82,11 @@
       "icon": "instagram"
     }
   ],
+  "upcoming": {
+    "title": "The Dark Side of Cameron",
+    "author": "Jamaluddin Jamali",
+    "label": "Coming Soon"
+  },
   "contact": {
     "email": "contact@jamaluddinjamali.com",
     "phone": "+92 300 1234567",

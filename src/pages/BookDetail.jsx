@@ -48,7 +48,11 @@ function BookDetail() {
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-midnight-navy">
             {book.title}
           </h1>
-          <p className="mt-3 text-lg leading-8 text-slate-700">{book.tagline}</p>
+          <div className="mt-6 space-y-4">
+            {book.tagline && <p className="text-lg leading-8 text-slate-700 italic">{book.tagline}</p>}
+            {book.boldLine && <p className="text-lg leading-8 text-slate-900 font-bold">{book.boldLine}</p>}
+            {book.hook && <p className="text-lg leading-8 text-slate-700">{book.hook}</p>}
+          </div>
         </div>
         <div className="rounded-3xl border border-card-border bg-cream-alt p-6 shadow-soft">
           <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Details</p>
@@ -137,7 +141,7 @@ function BookDetail() {
                   className="block rounded-3xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-700 transition hover:border-brand-300 hover:bg-white"
                 >
                   <p className="font-semibold text-slate-950">{item.title}</p>
-                  <p className="mt-2 text-sm text-slate-600">{item.tagline}</p>
+                  <p className="mt-2 text-sm text-slate-600 line-clamp-2">{item.shortDescription}</p>
                 </Link>
               ))}
             </div>

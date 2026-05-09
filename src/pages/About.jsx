@@ -1,7 +1,9 @@
+import { motion } from 'framer-motion'
 import data from '../data.json'
 
 function About() {
   const author = data.author
+  const upcoming = data.upcoming
 
   return (
     <section className="space-y-8 rounded-[2rem] border border-card-border bg-cream-alt p-10 shadow-soft">

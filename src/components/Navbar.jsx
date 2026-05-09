@@ -13,7 +13,7 @@ import {
   faFacebookF,
 } from '@fortawesome/free-brands-svg-icons'
 
-function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
+function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -104,6 +104,16 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
                 </div>
                 <ul className="space-y-1 p-3">
                   {bookItems}
+                  {upcoming && (
+                    <li className="mt-2 rounded-lg bg-midnight-navy/80 px-3 py-2 text-sm text-cream-alt opacity-70 pointer-events-none">
+                      <div className="flex items-center justify-between gap-3">
+                        <span>{upcoming.title}</span>
+                        <span className="rounded-full bg-[#fdf3d0] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c9a43a]">
+                          Soon
+                        </span>
+                      </div>
+                    </li>
+                  )}
                 </ul>
               </div>
             )}
@@ -180,7 +190,21 @@ function Navbar({ authorName, books, searchTerm, setSearchTerm }) {
               Books
               <FontAwesomeIcon icon={faChevronDown} className="h-3.5 w-3.5 ml-2" />
             </button>
-            {dropdownOpen && <ul className="space-y-1 pl-4">{bookItems}</ul>}
+            {dropdownOpen && (
+              <ul className="space-y-1 pl-4">
+                {bookItems}
+                {upcoming && (
+                  <li className="mt-2 rounded-lg bg-midnight-navy/80 px-3 py-2 text-sm text-cream-alt opacity-70 pointer-events-none">
+                    <div className="flex items-center justify-between gap-3">
+                      <span>{upcoming.title}</span>
+                      <span className="rounded-full bg-[#fdf3d0] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c9a43a]">
+                        Soon
+                      </span>
+                    </div>
+                  </li>
+                )}
+              </ul>
+            )}
             <NavLink to="/about" className={activeClass} onClick={() => setMenuOpen(false)}>
               About
             </NavLink>

@@ -21,15 +21,15 @@ function Home() {
               <span className="inline-block h-px w-24 bg-slate-200 align-middle"></span>
             </div>
             <h1 className="text-5xl font-black leading-tight tracking-[-0.04em] text-deep-crimson sm:text-6xl">
-              The Sin of Killing
+              {featured.title}
             </h1>
             <p className="text-base font-bold uppercase tracking-[0.32em] text-midnight-navy">
               {featured.tagline}
             </p>
             <div className="space-y-5 text-body-text">
-              <p className="max-w-2xl text-base leading-8">{featured.shortDescription}</p>
-              <p className="max-w-2xl text-sm leading-7">
-                The Sin of Killing follows Salma from a fifth birthday in Lahore to a restless search for truth across generations. When nephew Ahsen arrives, family sins open into a dark, tender story of lost love, danger, and the possibility of redemption in a world shaped by memory and quiet violence.
+              <p className="max-w-2xl text-base leading-8 line-clamp-5">
+                {featured.hook && <span className="font-semibold">{featured.hook} </span>}
+                {featured.shortDescription}
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

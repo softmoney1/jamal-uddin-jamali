@@ -23,7 +23,7 @@ function Contact() {
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr]">
-      <section className="space-y-6 rounded-[2rem] border border-card-border bg-cream-alt p-10 shadow-soft">
+      <section id="contact" className="space-y-6 rounded-[2rem] border border-card-border bg-cream-alt p-10 shadow-soft">
         <div>
           <p className="text-sm uppercase tracking-[0.35em] text-brand-600">Contact</p>
           <h1 className="mt-4 text-4xl font-semibold text-midnight-navy">Get in touch</h1>

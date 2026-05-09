@@ -23,6 +23,7 @@ function RootLayout() {
       <Navbar
         authorName={data.author.name}
         books={data.books}
+        upcoming={data.upcoming}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
