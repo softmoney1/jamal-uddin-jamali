@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import data from '../data.json'
+import { data } from '../data.js'
 
 const author = data.author
 

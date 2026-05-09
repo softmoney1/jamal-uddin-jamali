@@ -1,4 +1,6 @@
-{
+
+
+export const data = {
   "author": {
     "name": "Jamaluddin Jamali",
     "bio": "Jamaluddin Jamali writes crossover book club fiction, suspense, literary thrillers, and his stories take you inside the darkest chambers of human heart and mind, deep into the house of desires and fears, the parts of human nature which are universal, such as love and fear, bliss and sorrow, happiness and grief, hope and depression, light and darkness. His stories may take you into dark rabbit holes miles away from hope, but then bring you back to new beginning and hope, for hope is always there, even when it doesn't seem to be there, like a new morning or a new day that is always there, waiting behind some invisible corner, waiting for the right moment to come and fill your heart with hope again. Like a new partner who asks you to forget the past and take a new start and smile again, and then again. Keep smiling. For that is life. A smile just. At the end of the day. A smile that you want to remember. The Sin of Killing: The Dance of Changing Winds is his debut novel. The Baby Who Brought The Storm is his second book. He is working on his new book, a psychological fiction with a female protagonist. He lives in Lahore with his wife and four children and works as a reporter for a media house, City News Network, City42 news and 24 news. Previously, he has worked for three English newspapers: The Nation, The Post and Pakistan Today. He has a master's degree in English Literature and loves being close to nature. He loves animals, all of them, being manifestations of nature.",
@@ -20,11 +22,7 @@
       "publishedDate": "March 25, 2016",
       "format": "Kindle Edition",
       "fileSize": "593 KB",
-      "genre": [
-        "Literary Fiction",
-        "Suspense",
-        "Thriller"
-      ],
+      "genre": ["Literary Fiction", "Suspense", "Thriller"],
       "editor": "E.D. Bird",
       "rating": {
         "amazon": 4.0,
@@ -59,63 +57,41 @@
       "publishedDate": "May 10, 2026",
       "format": "Kindle Edition",
       "fileSize": "785 KB",
-      "genre": [
-        "Literary Fiction",
-        "Psychological Fiction",
-        "Suspense"
-      ],
+      "genre": ["Literary Fiction", "Psychological Fiction", "Suspense"],
       "featured": true,
-      "coverImage": "/assets/the-baby.jpeg",
+      "coverImage": "https://m.media-amazon.com/images/I/81BRg0LnTfL._SY522_.jpg",
       "buyLinks": {
         "amazon": "https://www.amazon.com/gp/product/B0GWYPZW1Q",
-        "goodreads": "https://www.goodreads.com/book/show/250964584-the-baby-who-brought-the-storm",
+        "goodreads": "#",
         "kindle": "#"
       }
     }
   ],
   "social": [
     {
-      "platform": "Instagram",
-      "url": "https://www.instagram.com/ourbookreaders/",
-      "icon": "fa-brands fa-instagram"
-    },
-    {
-      "platform": "Facebook",
-      "url": "https://www.facebook.com/ThebookReadersReview/",
-      "icon": "fa-brands fa-facebook"
+      "platform": "Twitter",
+      "url": "https://twitter.com/jamaluddin",
+      "icon": "twitter"
     },
     {
       "platform": "LinkedIn",
-      "url": "https://www.linkedin.com/in/jamaluddinjamali/",
-      "icon": "fa-brands fa-linkedin"
+      "url": "https://linkedin.com/in/jamaluddin",
+      "icon": "linkedin"
     },
     {
-      "platform": "X",
-      "url": "https://x.com/jm_jamali",
-      "icon": "fa-brands fa-x-twitter"
-    },
-    {
-      "platform": "Goodreads",
-      "url": "https://www.goodreads.com/author/show/14707793.Jamaluddin_Jamali",
-      "icon": "fa-brands fa-goodreads"
-    },
-    {
-      "platform": "Email",
-      "url": "mailto:jm.jamali123@gmail.com",
-      "icon": "fa-solid fa-envelope"
+      "platform": "Instagram",
+      "url": "https://instagram.com/jamaluddin",
+      "icon": "instagram"
     }
   ],
   "upcoming": {
-    "title": "The Dark Side of Smiling Gamblers",
+    "title": "The Dark Side of Cameron",
     "author": "Jamaluddin Jamali",
     "label": "Coming Soon"
   },
   "contact": {
-    "email": "jm.jamali123@gmail.com",
-    "heading": "Get in Touch",
-    "subheading": "Have a question, a review, or just want to say hello?",
-    "responseNote": "Jamaluddin personally reads every message and tries to respond within 2\u20133 days.",
-    "social": "You can also reach out via social media.",
+    "email": "contact@jamaluddinjamali.com",
+    "phone": "+92 300 1234567",
     "address": "Lahore, Pakistan"
   }
-}
+};

@@ -3,7 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import data from '../data.json'
+import { data } from '../data.js'
 
 function RootLayout() {
   const [searchTerm, setSearchTerm] = useState('')

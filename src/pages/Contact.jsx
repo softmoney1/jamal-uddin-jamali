@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import data from '../data.json'
+import { data } from '../data.js'
 
 const contact = data.contact
 const socialLinks = data.social

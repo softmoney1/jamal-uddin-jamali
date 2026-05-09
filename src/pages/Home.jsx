@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import data from '../data.json'
+import { data } from '../data.js'
 
 function Home() {
   const featured = data.books.find((item) => item.featured)

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faAmazon, faGoodreads } from '@fortawesome/free-brands-svg-icons'
-import data from '../data.json'
+import { data } from '../data.js'
 
 // Map store keys to icons; kindle falls back to Amazon icon
 const storeIcons = {
