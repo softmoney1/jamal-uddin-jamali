@@ -112,6 +112,10 @@
   },
   "contact": {
     "email": "jm.jamali123@gmail.com",
+    "heading": "Get in Touch",
+    "subheading": "Have a question, a review, or just want to say hello?",
+    "responseNote": "Jamaluddin personally reads every message and tries to respond within 2\u20133 days.",
+    "social": "You can also reach out via social media.",
     "address": "Lahore, Pakistan"
   }
 }
