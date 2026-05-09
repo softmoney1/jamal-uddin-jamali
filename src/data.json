@@ -1,0 +1,107 @@
+{
+  "author": {
+    "name": "Jamaluddin Jamali",
+    "bio": "Writes crossover book club fiction, suspense, literary thrillers. Stories explore the darkest chambers of human heart and mind — love, fear, hope, depression, light and darkness. Lives in Lahore with wife and four children. Reporter at City News Network, City42, and 24News. Previously at The Nation, The Post, and Pakistan Today. Master's in English Literature. Loves nature and animals.",
+    "role": "Author & Reporter",
+    "location": "Lahore, Pakistan"
+  },
+  "books": [
+    {
+      "id": "sin-of-killing",
+      "title": "The Sin of Killing: The Dance of Changing Winds",
+      "slug": "the-sin-of-killing",
+      "tagline": "Our past is chasing us. We are on the run.",
+      "shortDescription": "Takes you inside Pakistan — its hidden backyard, soul of society, culture, family system, love, honor, and escape.",
+      "paragraphs": [
+        "Salma turns five as the city hums with fireworks and fear. Lahore expands beyond the domestic walls into the hidden backyard of a family carrying secrets, sorrow, and an old love that won’t let her go.",
+        "A nephew named Ahsen appears at the edge of their lives, and the sins of the past open into darkness, redemption, and a relentless search for meaning in a country where every choice can change the wind."
+      ],
+      "pages": 252,
+      "publishedDate": "March 25, 2016",
+      "format": "Kindle Edition",
+      "fileSize": "593 KB",
+      "genre": ["Literary Fiction", "Suspense", "Thriller"],
+      "editor": "E.D. Bird",
+      "rating": {
+        "amazon": 4.0,
+        "goodreads": 4.67,
+        "reviews": 3
+      },
+      "coverImage": "https://m.media-amazon.com/images/I/71mTve1yvVL._SY522_.jpg",
+      "featured": true,
+      "buyLinks": [
+        {
+          "store": "Amazon",
+          "url": "https://www.amazon.com/dp/B01DEQYM96",
+          "icon": "amazon"
+        },
+        {
+          "store": "Goodreads",
+          "url": "https://www.goodreads.com/book/show/29616382-the-sin-of-killing",
+          "icon": "goodreads"
+        }
+      ],
+      "editorialReview": {
+        "text": "The setting is Pakistan and the book is rich in that country's culture... a great read with a twist in the tail.",
+        "reviewer": "E.D. Bird, Editor"
+      }
+    },
+    {
+      "id": "baby-storm",
+      "title": "The Baby Who Brought the Storm",
+      "slug": "the-baby-who-brought-the-storm",
+      "tagline": "A Tear For Unmarried Mothers. A tribute.",
+      "shortDescription": "A literary crossover of psychological realism. A tale of bliss and sorrow, forbidden love, loyalty, betrayal and social taboos.",
+      "paragraphs": [
+        "Aadam is abandoned at birth and raised by a wealthy Muslim family whose fortunes and faults carry him into the shadow of a forbidden love. When he meets an unmarried pregnant girl, his loyalty is tested and his family’s fragile peace begins to crumble.",
+        "He must choose whether to save his love or surrender to the social taboos and betrayals that threaten to destroy everything he has ever held dear."
+      ],
+      "pages": 288,
+      "publishedDate": "May 10, 2026",
+      "format": "Kindle Edition",
+      "fileSize": "785 KB",
+      "genre": ["Literary Fiction", "Psychological Fiction", "Suspense"],
+      "editor": "Nora Khan",
+      "rating": {
+        "amazon": 4.2,
+        "goodreads": 4.5,
+        "reviews": 12
+      },
+      "coverImage": "https://m.media-amazon.com/images/I/81BRg0LnTfL._SL1500_.jpg",
+      "featured": false,
+      "buyLinks": [
+        {
+          "store": "Amazon",
+          "url": "https://www.amazon.com/gp/product/B0GWYPZW1Q",
+          "icon": "amazon"
+        }
+      ],
+      "editorialReview": {
+        "text": "A tense, emotional story that balances social realism with deep psychological insight. This novel is a tribute to those whose lives are shaped by love and loss.",
+        "reviewer": "Nora Khan, Editor"
+      }
+    }
+  ],
+  "social": [
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/jamaluddin",
+      "icon": "twitter"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/jamaluddin",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/jamaluddin",
+      "icon": "instagram"
+    }
+  ],
+  "contact": {
+    "email": "contact@jamaluddinjamali.com",
+    "phone": "+92 300 1234567",
+    "address": "Lahore, Pakistan"
+  }
+}
