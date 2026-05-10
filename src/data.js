@@ -64,26 +64,46 @@ export const data = {
       "coverImage": "https://m.media-amazon.com/images/I/81BRg0LnTfL._SY522_.jpg",
       "buyLinks": {
         "amazon": "https://www.amazon.com/gp/product/B0GWYPZW1Q",
-        "goodreads": "#",
+        "goodreads": "https://www.goodreads.com/book/show/250964584-the-baby-who-brought-the-storm",
         "kindle": "#"
       }
     }
   ],
   "social": [
     {
-      "platform": "Twitter",
-      "url": "https://twitter.com/jamaluddin",
-      "icon": "twitter"
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/ourbookreaders/",
+      "icon": "fa-brands fa-instagram"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/ThebookReadersReview/",
+      "icon": "fa-brands fa-facebook"
     },
     {
       "platform": "LinkedIn",
-      "url": "https://linkedin.com/in/jamaluddin",
-      "icon": "linkedin"
+      "url": "https://www.linkedin.com/in/jamaluddinjamali/",
+      "icon": "fa-brands fa-linkedin"
     },
     {
-      "platform": "Instagram",
-      "url": "https://instagram.com/jamaluddin",
-      "icon": "instagram"
+      "platform": "X",
+      "url": "https://x.com/jm_jamali",
+      "icon": "fa-brands fa-x-twitter"
+    },
+    {
+      "platform": "Goodreads",
+      "url": "https://www.goodreads.com/author/show/14707793.Jamaluddin_Jamali",
+      "icon": "fa-brands fa-goodreads"
+    },
+    {
+      "platform": "Amazon",
+      "url": "https://www.amazon.com/stores/Jamaluddin-Jamali/author/B017RN40IK",
+      "icon": "fa-brands fa-amazon"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:jm.jamali123@gmail.com",
+      "icon": "fa-solid fa-envelope"
     }
   ],
   "upcoming": {

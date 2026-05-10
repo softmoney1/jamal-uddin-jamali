@@ -107,7 +107,7 @@ function Footer({ social, books }) {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-midnight-navy pt-6 text-sm text-cream-alt sm:flex-row">
           <p className="flex items-center gap-2">
             <FontAwesomeIcon icon={faCopyright} className="h-3.5 w-3.5" />
-            2026 Jamaluddin Jamali. All rights reserved.
+            {new Date().getFullYear()} Jamaluddin Jamali. All rights reserved.
           </p>
         </div>
       </div>
