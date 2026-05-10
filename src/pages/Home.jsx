@@ -85,7 +85,7 @@ function Home() {
 
       {/* ── UPCOMING BOOK SECTION ── */}
       {upcoming && (
-        <section className="relative overflow-hidden bg-[#0a0a14] px-4 py-16 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden bg-[#0a0a14] px-4 py-16 sm:px-6 lg:px-8 bg-cover bg-center" style={{ backgroundImage: `url('/images/darkside.jpeg')` }}>
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-[rgba(10,10,20,0.72)] z-0" />
           <div className="relative z-10 mx-auto max-w-2xl text-center space-y-5">

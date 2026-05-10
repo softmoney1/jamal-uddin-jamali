@@ -29,7 +29,7 @@ export const data = {
         "goodreads": 4.67,
         "reviews": 3
       },
-      "coverImage": "https://m.media-amazon.com/images/I/71mTve1yvVL._SY522_.jpg",
+      "coverImage": "/images/sin-of-killing-cover.jpg",
       "featured": false,
       "buyLinks": {
         "amazon": "https://www.amazon.com/dp/B01DEQYM96",
@@ -60,7 +60,7 @@ export const data = {
       "fileSize": "785 KB",
       "genre": ["Literary Fiction", "Psychological Fiction", "Suspense"],
       "featured": true,
-      "coverImage": "https://m.media-amazon.com/images/I/81BRg0LnTfL._SY522_.jpg",
+      "coverImage": "/images/baby-storm-cover.jpg",
       "buyLinks": {
         "amazon": "https://www.amazon.com/gp/product/B0GWYPZW1Q",
         "goodreads": "https://www.goodreads.com/book/show/250964584-the-baby-who-brought-the-storm"
