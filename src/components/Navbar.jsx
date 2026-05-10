@@ -50,7 +50,7 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
           <Link
             to={`/books/${book.slug}`}
             className="block rounded-lg px-3 py-2 text-sm text-cream-alt transition hover:bg-midnight-navy hover:text-gold"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { setMenuOpen(false); setDropdownOpen(false); }}
           >
             {book.title}
           </Link>
@@ -92,16 +92,21 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
           <NavLink to="/" className={activeClass} end>
             Home
           </NavLink>
-          <div className="relative" ref={dropdownRef}>
+          <div className="relative flex items-center" ref={dropdownRef}>
             <button
               type="button"
               onClick={() => navigate('/books')}
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-cream-alt transition hover:text-gold"
+              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-cream-alt transition hover:text-gold"
             >
               Books
-              <span onClick={(e) => { e.stopPropagation(); setDropdownOpen(!dropdownOpen); }} className="cursor-pointer">
-                <FontAwesomeIcon icon={faChevronDown} className="h-3.5 w-3.5" />
-              </span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="inline-flex items-center px-2 py-2 text-sm font-semibold text-cream-alt transition hover:text-gold"
+              aria-label="Toggle books dropdown"
+            >
+              <FontAwesomeIcon icon={faChevronDown} className="h-3.5 w-3.5" />
             </button>
             {dropdownOpen && (
               <div className="absolute left-0 top-full z-20 mt-3 min-w-[20rem] overflow-hidden rounded-[1.5rem] border border-midnight-navy bg-steel-blue shadow-xl">
@@ -190,22 +195,31 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
             end
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
-              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
+              `block w-full py-2 px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
               }`
             }
           >
             Home
           </NavLink>
 
-          {/* Books toggle */}
-          <button
-            type="button"
-            onClick={() => setDropdownOpen((open) => !open)}
-            className="flex w-full items-center justify-center gap-2 py-[14px] px-6 text-center text-[15px] tracking-[0.03em] text-[#f5f0e8] transition hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]"
-          >
-            Books
-            <FontAwesomeIcon icon={faChevronDown} className={`h-3 w-3 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
-          </button>
+          {/* Books */}
+          <div className="flex w-full items-center justify-center">
+            <button
+              type="button"
+              onClick={() => { navigate('/books'); setMenuOpen(false); }}
+              className="flex-1 py-2 px-6 text-center text-[15px] tracking-[0.03em] text-[#f5f0e8] transition hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]"
+            >
+              Books
+            </button>
+            <button
+              type="button"
+              onClick={() => setDropdownOpen((open) => !open)}
+              className="py-2 px-3 text-center text-[15px] tracking-[0.03em] text-[#f5f0e8] transition hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]"
+              aria-label="Toggle books dropdown"
+            >
+              <FontAwesomeIcon icon={faChevronDown} className={`h-3 w-3 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
 
           {/* Books sub-items */}
           {dropdownOpen && (
@@ -233,7 +247,7 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
             to="/about"
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
-              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
+              `block w-full py-2 px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
               }`
             }
           >
@@ -245,7 +259,7 @@ function Navbar({ authorName, books, upcoming, searchTerm, setSearchTerm }) {
             to="/contact"
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
-              `block w-full py-[14px] px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
+              `block w-full py-2 px-6 text-center text-[15px] tracking-[0.03em] transition ${isActive ? 'font-semibold text-[#e8c468]' : 'text-[#f5f0e8] hover:bg-[rgba(232,196,104,0.06)] hover:text-[#e8c468]'
               }`
             }
           >

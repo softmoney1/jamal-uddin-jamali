@@ -85,7 +85,7 @@ export const data = {
     }
   ],
   "upcoming": {
-    "title": "The Dark Side of Cameron",
+    "title": "The Dark Side of Smiling Gamblers",
     "author": "Jamaluddin Jamali",
     "label": "Coming Soon"
   },
