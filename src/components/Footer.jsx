@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faEnvelope,
@@ -19,6 +20,8 @@ const iconMap = {
 function Footer({ social, books }) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('')
+  const location = useLocation()
+  const isContactPage = location.pathname === '/contact'
 
   const buyLinks = useMemo(() => {
     const featured = books.find((book) => book.featured)
@@ -85,20 +88,43 @@ function Footer({ social, books }) {
               </div>
             </div>
             <div className="rounded-3xl border border-midnight-navy bg-midnight-navy p-6">
-              <h3 className="text-sm font-semibold uppercase text-where-to-buy">Where to Buy</h3>
+              <h3 className={`text-sm font-semibold uppercase text-where-to-buy ${isContactPage ? 'tracking-widest' : ''}`.trim()}>Where to Buy</h3>
               <div className="mt-4 space-y-3">
-                {Object.entries(buyLinks).map(([store, url]) => (
-                  <a
-                    key={store}
-                    href={url || '#'}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-3 rounded-2xl border border-card-border bg-transparent px-4 py-3 text-sm font-medium text-cream-alt transition hover:border-gold hover:text-gold"
-                  >
-                    <FontAwesomeIcon icon={iconMap[store]} className="h-4 w-4" />
-                    {store.charAt(0).toUpperCase() + store.slice(1)}
-                  </a>
-                ))}
+                {isContactPage ? (
+                  <>
+                    <a
+                      href="https://www.amazon.com/stores/Jamaluddin-Jamali/author/B017RN40IK"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-3 rounded-2xl border border-card-border bg-transparent px-4 py-3 text-sm font-medium text-cream-alt transition hover:border-gold hover:text-gold"
+                    >
+                      <FontAwesomeIcon icon={faAmazon} className="h-4 w-4" />
+                      Amazon
+                    </a>
+                    <a
+                      href="https://www.goodreads.com/author/show/14707793.Jamaluddin_Jamali"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-3 rounded-2xl border border-card-border bg-transparent px-4 py-3 text-sm font-medium text-cream-alt transition hover:border-gold hover:text-gold"
+                    >
+                      <FontAwesomeIcon icon={faGoodreads} className="h-4 w-4" />
+                      Goodreads
+                    </a>
+                  </>
+                ) : (
+                  Object.entries(buyLinks).map(([store, url]) => (
+                    <a
+                      key={store}
+                      href={url || '#'}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-3 rounded-2xl border border-card-border bg-transparent px-4 py-3 text-sm font-medium text-cream-alt transition hover:border-gold hover:text-gold"
+                    >
+                      <FontAwesomeIcon icon={iconMap[store]} className="h-4 w-4" />
+                      {store.charAt(0).toUpperCase() + store.slice(1)}
+                    </a>
+                  ))
+                )}
               </div>
             </div>
           </div>
