@@ -85,7 +85,8 @@ function BookDetail() {
     <div className="space-y-12 px-4 py-10 sm:px-6 lg:px-8">
       <SEO 
         title={book.title} 
-        description={book.shortDescription} 
+        description={book.shortDescription}
+        image={book.coverImage}
       />
 
       {/* ── BACK LINK ── */}
