@@ -7,9 +7,9 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import ScrollToTop from './components/ScrollToTop'
-import Clarity from "react-microsoft-clarity";
+
 function App() {
-  Clarity.init("wrvhwivmb6");
+
   return (
     <BrowserRouter>
       <ScrollToTop />
