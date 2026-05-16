@@ -50,7 +50,7 @@ export default function Contact() {
       `mailto:${contact.email}` +
       `?subject=${encodeURIComponent(form.subject || 'Message from website')}` +
       `&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`
-    window.location.href = mailto
+    window.open(mailto, '_self')
     setSent(true)
   }
 

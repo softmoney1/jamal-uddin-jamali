@@ -110,7 +110,7 @@ export const data = {
     "label": "Coming Soon"
   },
   "contact": {
-    "email": "contact@jamaluddinjamali.com",
+    "email": "jm.jamali123@gmail.com",
     "phone": "+92 300 1234567",
     "address": "Lahore, Pakistan"
   }
